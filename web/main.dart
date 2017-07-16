@@ -1,7 +1,8 @@
-import 'dart:html';
+import 'package:angular2/platform/browser.dart';
+import 'smart_table_component.dart';
 
 enum Sex {male, female}
 
 void main() {
-  querySelector('#output').text = 'Your Dart app is running.';
+  bootstrap(SmartTableComponent);
 }
