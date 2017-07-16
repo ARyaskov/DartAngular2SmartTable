@@ -1,6 +1,6 @@
 import 'common.dart';
-import 'Department.dart';
-import 'Address.dart';
+import 'department.dart';
+import 'address.dart';
 
 class SmartTableRecord {
   String m_name;
