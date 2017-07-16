@@ -1,22 +1,22 @@
 class Address {
-  String city;
-  String street;
-  String building;
+  String m_city;
+  String m_street;
+  String m_building;
 
-  String get getCity => city;
-  void set setCity(String city) {
-    this.city = city;
+  String get city => m_city;
+  void set city(String city) {
+    m_city = city;
   }
 
-  String get getStreet => street;
-  void set setStreet(String street) {
-    this.street = street;
+  String get street => m_street;
+  void set street(String street) {
+    m_street = street;
   }
 
-  String get getBuilding => building;
-  void set setBuilding(String building) {
-    this.building = building;
+  String get building => m_building;
+  void set building(String building) {
+    m_building = building;
   }
 
-  Address(this.city, this.street, this.building);
+  Address(this.m_city, this.m_street, this.m_building);
 }

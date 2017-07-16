@@ -1,10 +1,10 @@
 class Department {
-  String name;
+  String m_name;
 
-  String get getName => name;
-  void setName(String name) {
-    this.name = name;
+  String get name => m_name;
+  void set name(String name) {
+    m_name = name;
   }
 
-  Department(this.name);
+  Department(this.m_name);
 }
