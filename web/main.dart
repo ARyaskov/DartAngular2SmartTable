@@ -1,6 +1,6 @@
 import 'dart:html';
 
-enum Sex {MALE, FEMALE}
+enum Sex {male, female}
 
 void main() {
   querySelector('#output').text = 'Your Dart app is running.';
