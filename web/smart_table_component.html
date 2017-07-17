@@ -3,7 +3,7 @@
     <tr *ngFor="#record of m_dataService.data">
         <td>{{record.name}}</td>
         <td>{{record.age}}</td>
-        <td>{{record.sex}}</td>
+        <td>{{getSexAsString(record.sex)}}</td>
         <td>{{record.department.name}}</td>
         <td>{{record.address.city}}, {{record.address.street}} {{record.address.building}}</td>
     </tr>
