@@ -1,6 +1,6 @@
 <table>
     <th>Имя</th><th>Возраст</th><th>Пол</th><th>Департамент</th><th>Адрес</th>
-    <tr *ngFor="#record of m_dataService.data">
+    <tr *ngFor="#record of (m_dataService.data | orderBy:'name':'des')">
         <td>{{record.name}}</td>
         <td>{{record.age}}</td>
         <td>{{getSexAsString(record.sex)}}</td>
