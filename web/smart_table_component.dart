@@ -12,12 +12,4 @@ import 'filter_by_pipe.dart';
 class SmartTableComponent {
   final SmartTableRecordDataService m_dataService;
   SmartTableComponent(this.m_dataService);
-  
-  String getSexAsString(Sex sex) {
-    String result  = 'Male';
-    if (sex.index == Sex.female.index){
-      result = 'Female';
-    }
-    return result;
-  }
 }
