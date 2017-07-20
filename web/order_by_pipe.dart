@@ -1,6 +1,5 @@
 import 'dart:mirrors';
 import 'package:angular2/core.dart';
-import 'common.dart';
 import 'smart_table_record.dart';
 
 @Pipe('orderBy')
