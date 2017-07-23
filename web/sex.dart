@@ -36,4 +36,8 @@ class Sex {
     }
     return _femaleInstance;
   }
+
+  String toString(){
+    return _value;
+  }
 }
