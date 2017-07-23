@@ -30,7 +30,7 @@ class Filter {
 
   Map<String, int> getValuesAndCounts() {
     Map<String, int> result = new Map<String, int>();
-    List<SmartTableRecord> listOfRecords = _object.dataService.data;
+    List<SmartTableRecord> listOfRecords = _object.getFilteredRecords();
     listOfRecords.forEach((SmartTableRecord record) {
       InstanceMirror instanceMirror = getProperty(record, _classFieldName);
       String valueOfProperty = instanceMirror.reflectee.toString();
