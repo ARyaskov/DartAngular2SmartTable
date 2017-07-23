@@ -30,14 +30,19 @@ class Filter {
 
   Map<String, int> getValuesAndCounts() {
     Map<String, int> result = new Map<String, int>();
-    List<SmartTableRecord> listOfRecords = _object.getFilteredRecords();
+    List<SmartTableRecord> listOfRecords = _object.dataService.data;
+    List<SmartTableRecord> filteredListOfRecords = _object.getFilteredRecords();
     listOfRecords.forEach((SmartTableRecord record) {
       InstanceMirror instanceMirror = getProperty(record, _classFieldName);
       String valueOfProperty = instanceMirror.reflectee.toString();
-      if (result.containsKey(valueOfProperty)) {
-        result[valueOfProperty]++;
+      if (filteredListOfRecords.contains(record)) {
+        if (result.containsKey(valueOfProperty)) {
+          result[valueOfProperty]++;
+        } else {
+          result.putIfAbsent(valueOfProperty, () => 1);
+        }
       }else{
-        result.putIfAbsent(valueOfProperty, () => 1);
+        result.putIfAbsent(valueOfProperty, () => 0);
       }
     });
 
@@ -67,7 +72,7 @@ class Filter {
   bool isDisabled(String value){
     bool result = false;
     if (_isMultipleSelection != true) {
-      if (_currentValues.length > 0 && _currentValues.contains(value) != true){
+      if (_currentValues.length > 0 && _currentValues.contains(value) != true || getValuesAndCounts()[value] == 0){
         result = true;
       }
     } else {
