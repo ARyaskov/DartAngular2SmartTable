@@ -15,34 +15,40 @@ class OrderByPipe implements PipeTransform {
   }
 
   List<SmartTableRecord> transform(List<SmartTableRecord> array, String columnName, String order) {
-    bool isColumnExists = false;
-    Symbol simpleNameAsSymbol;
-    ClassMirror classMirror = reflectClass(SmartTableRecord);
-    for (DeclarationMirror m in classMirror.declarations.values) {
-      simpleNameAsSymbol = m.simpleName;
-      String simpleName = MirrorSystem.getName(m.simpleName);
-      if (columnName.compareTo(simpleName) == 0) {
-        isColumnExists = true;
-        break;
+    if (columnName.isNotEmpty && order.isNotEmpty) {
+      bool isColumnExists = false;
+      Symbol simpleNameAsSymbol;
+      ClassMirror classMirror = reflectClass(SmartTableRecord);
+      for (DeclarationMirror m in classMirror.declarations.values) {
+        simpleNameAsSymbol = m.simpleName;
+        String simpleName = MirrorSystem.getName(m.simpleName);
+        if (columnName.compareTo(simpleName) == 0) {
+          isColumnExists = true;
+          break;
+        }
+      }
+      if (isColumnExists) {
+        array.sort((SmartTableRecord a, SmartTableRecord b) {
+          var value1 = reflect(a)
+              .getField(simpleNameAsSymbol)
+              .reflectee;
+          var value2 = reflect(b)
+              .getField(simpleNameAsSymbol)
+              .reflectee;
+          if (value1 is Comparable != true) {
+            value1 = value1.toString();
+            value2 = value2.toString();
+          }
+          if (value1.compareTo(value2) < 0) {
+            return 1 * _convertSortOrderToInt(order);
+          } else if (value1.compareTo(value2) > 0) {
+            return -1 * _convertSortOrderToInt(order);
+          } else {
+            return 0;
+          }
+        });
       }
     }
-    if (isColumnExists) {
-      array.sort((SmartTableRecord a, SmartTableRecord b) {
-        var value1 = reflect(a).getField(simpleNameAsSymbol).reflectee;
-        var value2 = reflect(b).getField(simpleNameAsSymbol).reflectee;
-        if (value1 is Comparable != true) {
-          value1 = value1.toString();
-          value2 = value2.toString();
-        }
-        if (value1.compareTo(value2) < 0){
-          return 1 * _convertSortOrderToInt(order);
-        } else if (value1.compareTo(value2) > 0) {
-          return -1 * _convertSortOrderToInt(order);
-        } else {
-          return 0;
-        }
-      });
-      return array;
-    }
+    return array;
   }
 }

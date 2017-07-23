@@ -13,6 +13,7 @@ html, body {
   width: 60em;
   table-layout: fixed;
   margin-right: 2em;
+  margin-top: 2em;
 }
 
 .stc-table th {
@@ -42,6 +43,10 @@ html, body {
 }
 
 .stc-table-div {
-  height: 30em;
+  height: 32em;
   overflow-y: scroll;
+}
+
+.sort-arrow {
+  text-decoration: none;
 }
