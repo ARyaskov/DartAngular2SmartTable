@@ -81,4 +81,26 @@ class Filter {
 
     return result;
   }
+
+  void clear() {
+    _currentValues.clear();
+    _object.removeFilterKey(_classFieldName);
+  }
+
+  bool isChecked(String value) {
+    bool result = false;
+    if (_isMultipleSelection != true) {
+      if (_currentValues.contains(value)) {
+        result = true;
+      }
+    } else {
+      // TODO
+    }
+
+    return result;
+  }
+
+  bool canBeCleared() {
+    return _currentValues.length > 0;
+  }
 }
