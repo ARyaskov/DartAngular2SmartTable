@@ -1,5 +1,6 @@
 import 'common.dart';
 import 'dart:mirrors';
+import 'dart:collection';
 import 'smart_table_record.dart';
 import 'smart_table_component.dart';
 
@@ -29,7 +30,7 @@ class Filter {
   }
 
   Map<String, int> getValuesAndCounts() {
-    Map<String, int> result = new Map<String, int>();
+    SplayTreeMap<String, int> result = new SplayTreeMap<String, int>();
     List<SmartTableRecord> listOfRecords = _object.dataService.data;
     List<SmartTableRecord> filteredListOfRecords = _object.getFilteredRecords();
     listOfRecords.forEach((SmartTableRecord record) {
