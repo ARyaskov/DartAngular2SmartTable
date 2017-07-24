@@ -19,4 +19,8 @@ class Address {
   }
 
   Address(this.m_city, this.m_street, this.m_building);
+
+  String toString() {
+    return m_city + ', ' + m_street + ' ' + m_building;
+  }
 }

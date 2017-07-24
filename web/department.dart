@@ -7,4 +7,8 @@ class Department {
   }
 
   Department(this.m_name);
+
+  String toString(){
+    return m_name;
+  }
 }
