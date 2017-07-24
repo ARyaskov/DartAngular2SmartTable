@@ -39,7 +39,7 @@ class Sex {
     return _femaleInstance;
   }
 
-  String toString(){
+  String toString() {
     return _value;
   }
 }

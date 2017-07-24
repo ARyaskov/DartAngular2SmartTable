@@ -1,7 +1,6 @@
 part of smart_table_component;
 
-
-InstanceMirror getProperty<T>(T object, String property){
+InstanceMirror getProperty<T>(T object, String property) {
   InstanceMirror result;
   InstanceMirror instanceMirror = reflect(object);
   bool doneFlag = false;
@@ -9,8 +8,9 @@ InstanceMirror getProperty<T>(T object, String property){
     if (property.contains('.')) {
       String fieldName = property.substring(0, property.indexOf('.'));
       property = property.substring(property.indexOf('.') + 1, property.length);
-      instanceMirror = instanceMirror.getField(MirrorSystem.getSymbol(fieldName));
-    }else{
+      instanceMirror =
+          instanceMirror.getField(MirrorSystem.getSymbol(fieldName));
+    } else {
       result = instanceMirror.getField(MirrorSystem.getSymbol(property));
       doneFlag = true;
     }

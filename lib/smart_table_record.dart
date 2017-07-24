@@ -32,6 +32,6 @@ class SmartTableRecord {
     m_address = address;
   }
 
-
-  SmartTableRecord(this.m_name, this.m_age, this.m_sex, this.m_department, this.m_address);
+  SmartTableRecord(
+      this.m_name, this.m_age, this.m_sex, this.m_department, this.m_address);
 }

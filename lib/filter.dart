@@ -16,7 +16,8 @@ class Filter {
   String get classFieldName => _classFieldName;
   bool get isMultipleSelection => _isMultipleSelection;
 
-  Filter(SmartTableComponent object, String name, String title, String classFieldName, bool isMultipleSelection) {
+  Filter(SmartTableComponent object, String name, String title,
+      String classFieldName, bool isMultipleSelection) {
     _object = object;
     _name = name;
     _title = title;
@@ -38,7 +39,7 @@ class Filter {
         } else {
           result.putIfAbsent(valueOfProperty, () => 1);
         }
-      }else{
+      } else {
         result.putIfAbsent(valueOfProperty, () => 0);
       }
     });
@@ -46,7 +47,7 @@ class Filter {
     return result;
   }
 
-  void onFilterValueClicked(String value){
+  void onFilterValueClicked(String value) {
     if (_isMultipleSelection != true) {
       if (_currentValues.length > 0) {
         _currentValues.removeLast();
@@ -55,7 +56,7 @@ class Filter {
         _currentValues.add(value);
         _object.addFilterKeyValue(_classFieldName, value);
       }
-    }else{
+    } else {
       if (_currentValues.contains(value)) {
         _currentValues.remove(value);
         _object.removeFilterKey(_classFieldName);
@@ -66,10 +67,11 @@ class Filter {
     }
   }
 
-  bool isDisabled(String value){
+  bool isDisabled(String value) {
     bool result = false;
     if (_isMultipleSelection != true) {
-      if (_currentValues.length > 0 && _currentValues.contains(value) != true || getValuesAndCounts()[value] == 0){
+      if (_currentValues.length > 0 && _currentValues.contains(value) != true ||
+          getValuesAndCounts()[value] == 0) {
         result = true;
       }
     } else {

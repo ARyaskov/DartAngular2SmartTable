@@ -10,7 +10,7 @@ class Department {
 
   Department(this.m_name);
 
-  String toString(){
+  String toString() {
     return m_name;
   }
 }
