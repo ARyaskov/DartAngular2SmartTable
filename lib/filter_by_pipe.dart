@@ -1,7 +1,5 @@
-import 'dart:mirrors';
-import 'common.dart';
-import 'package:angular2/core.dart';
-import 'smart_table_record.dart';
+part of smart_table_component;
+
 
 @Pipe('filterBy')
 class FilterByPipe implements PipeTransform {

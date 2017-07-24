@@ -1,4 +1,5 @@
-import 'dart:mirrors';
+part of smart_table_component;
+
 
 InstanceMirror getProperty<T>(T object, String property){
   InstanceMirror result;

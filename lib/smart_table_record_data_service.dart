@@ -1,6 +1,4 @@
-import 'package:angular2/angular2.dart';
-import 'smart_table_record.dart';
-import 'sample_data.dart';
+part of smart_table_component;
 
 @Injectable()
 class SmartTableRecordDataService {

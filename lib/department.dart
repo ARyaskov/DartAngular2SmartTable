@@ -1,3 +1,5 @@
+part of smart_table_component;
+
 class Department {
   String m_name;
 

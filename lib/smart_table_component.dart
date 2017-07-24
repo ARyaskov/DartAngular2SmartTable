@@ -1,9 +1,20 @@
+library smart_table_component;
+
+import 'dart:mirrors';
+import 'dart:collection';
 import 'package:angular2/angular2.dart';
-import 'order_by_pipe.dart';
-import 'filter_by_pipe.dart';
-import 'smart_table_record.dart';
-import 'smart_table_record_data_service.dart';
-import 'filter.dart';
+
+part 'address.dart';
+part 'common.dart';
+part 'department.dart';
+part 'filter.dart';
+part 'filter_by_pipe.dart';
+part 'order_by_pipe.dart';
+part 'sample_data.dart';
+part 'sex.dart';
+part 'smart_table_record.dart';
+part 'smart_table_record_data_service.dart';
+
 
 @Component(
   selector: 'smart-table-component',

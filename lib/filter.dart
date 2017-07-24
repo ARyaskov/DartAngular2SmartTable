@@ -1,8 +1,4 @@
-import 'common.dart';
-import 'dart:mirrors';
-import 'dart:collection';
-import 'smart_table_record.dart';
-import 'smart_table_component.dart';
+part of smart_table_component;
 
 class Filter {
   SmartTableComponent _object;

@@ -1,7 +1,4 @@
-import 'sex.dart';
-import 'department.dart';
-import 'address.dart';
-import 'smart_table_record.dart';
+part of smart_table_component;
 
 List<SmartTableRecord> sampleRecords = new List(15);
 

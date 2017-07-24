@@ -1,3 +1,5 @@
+part of smart_table_component;
+
 class Address {
   String m_city;
   String m_street;

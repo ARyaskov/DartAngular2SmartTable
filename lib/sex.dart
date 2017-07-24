@@ -1,3 +1,5 @@
+part of smart_table_component;
+
 class Sex {
   String _value = getMaleLabel();
   static String _maleLabel = "Male";

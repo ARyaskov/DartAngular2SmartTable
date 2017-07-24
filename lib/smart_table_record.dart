@@ -1,6 +1,4 @@
-import 'sex.dart';
-import 'department.dart';
-import 'address.dart';
+part of smart_table_component;
 
 class SmartTableRecord {
   String m_name;
