@@ -8,7 +8,7 @@ List<SmartTableRecord> sampleRecords = new List(15);
 void fillSampleData() {
   sampleRecords[0] = new SmartTableRecord(
       'Shaun', 30, Sex.male(), new Department('Australia dept.'),
-      new Address("Сanberra", "Downing str.", '10b'));
+      new Address("Canberra", "Downing str.", '10b'));
 
   sampleRecords[1] = new SmartTableRecord(
       'Viki', 23, Sex.female(), new Department('Slovakia dept.'),

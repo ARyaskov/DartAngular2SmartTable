@@ -1,4 +1,5 @@
 import 'dart:mirrors';
+import 'common.dart';
 import 'package:angular2/core.dart';
 import 'smart_table_record.dart';
 
@@ -16,25 +17,9 @@ class OrderByPipe implements PipeTransform {
 
   List<SmartTableRecord> transform(List<SmartTableRecord> array, String columnName, String order) {
     if (columnName.isNotEmpty && order.isNotEmpty) {
-      bool isColumnExists = false;
-      Symbol simpleNameAsSymbol;
-      ClassMirror classMirror = reflectClass(SmartTableRecord);
-      for (DeclarationMirror m in classMirror.declarations.values) {
-        simpleNameAsSymbol = m.simpleName;
-        String simpleName = MirrorSystem.getName(m.simpleName);
-        if (columnName.compareTo(simpleName) == 0) {
-          isColumnExists = true;
-          break;
-        }
-      }
-      if (isColumnExists) {
         array.sort((SmartTableRecord a, SmartTableRecord b) {
-          var value1 = reflect(a)
-              .getField(simpleNameAsSymbol)
-              .reflectee;
-          var value2 = reflect(b)
-              .getField(simpleNameAsSymbol)
-              .reflectee;
+          var value1 = getProperty(a, columnName).reflectee;
+          var value2 = getProperty(b, columnName).reflectee;
           if (value1 is Comparable != true) {
             value1 = value1.toString();
             value2 = value2.toString();
@@ -47,7 +32,6 @@ class OrderByPipe implements PipeTransform {
             return 0;
           }
         });
-      }
     }
     return array;
   }
