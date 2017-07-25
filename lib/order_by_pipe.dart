@@ -14,7 +14,7 @@ class OrderByPipe implements PipeTransform {
 
   List<SmartTableRecord> transform(
       List<SmartTableRecord> array, String columnName, String order) {
-    if (columnName.isNotEmpty && order.isNotEmpty) {
+    if (columnName.isNotEmpty && order.isNotEmpty && (order=='asc' || order=='des')) {
       array.sort((SmartTableRecord a, SmartTableRecord b) {
         var value1 = getProperty(a, columnName).reflectee;
         var value2 = getProperty(b, columnName).reflectee;
