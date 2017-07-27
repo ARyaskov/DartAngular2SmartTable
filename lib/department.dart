@@ -1,16 +1,16 @@
 part of smart_table_component;
 
 class Department {
-  String m_name;
+  String _name;
 
-  String get name => m_name;
+  String get name => _name;
   void set name(String name) {
-    m_name = name;
+    _name = name;
   }
 
-  Department(this.m_name);
+  Department(this._name);
 
   String toString() {
-    return m_name;
+    return _name;
   }
 }
