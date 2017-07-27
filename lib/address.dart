@@ -1,28 +1,28 @@
 part of smart_table_component;
 
 class Address {
-  String m_city;
-  String m_street;
-  String m_building;
+  String _city;
+  String _street;
+  String _building;
 
-  String get city => m_city;
+  String get city => _city;
   void set city(String city) {
-    m_city = city;
+    _city = city;
   }
 
-  String get street => m_street;
+  String get street => _street;
   void set street(String street) {
-    m_street = street;
+    _street = street;
   }
 
-  String get building => m_building;
+  String get building => _building;
   void set building(String building) {
-    m_building = building;
+    _building = building;
   }
 
-  Address(this.m_city, this.m_street, this.m_building);
+  Address(this._city, this._street, this._building);
 
   String toString() {
-    return m_city + ', ' + m_street + ' ' + m_building;
+    return _city + ', ' + _street + ' ' + _building;
   }
 }
