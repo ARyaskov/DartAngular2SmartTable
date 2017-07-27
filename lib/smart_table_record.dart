@@ -1,37 +1,37 @@
 part of smart_table_component;
 
 class SmartTableRecord {
-  String m_name;
-  int m_age;
-  Sex m_sex;
-  Department m_department;
-  Address m_address;
+  String _name;
+  int _age;
+  Sex _sex;
+  Department _department;
+  Address _address;
 
-  String get name => m_name;
+  String get name => _name;
   void set name(String name) {
-    m_name = name;
+    _name = name;
   }
 
-  int get age => m_age;
+  int get age => _age;
   void set age(int age) {
-    m_age = age;
+    _age = age;
   }
 
-  Sex get sex => m_sex;
+  Sex get sex => _sex;
   void set sex(Sex sex) {
-    m_sex = sex;
+    _sex = sex;
   }
 
-  Department get department => m_department;
+  Department get department => _department;
   void set department(Department department) {
-    m_department = department;
+    _department = department;
   }
 
-  Address get address => m_address;
+  Address get address => _address;
   void set address(Address address) {
-    m_address = address;
+    _address = address;
   }
 
   SmartTableRecord(
-      this.m_name, this.m_age, this.m_sex, this.m_department, this.m_address);
+      this._name, this._age, this._sex, this._department, this._address);
 }
